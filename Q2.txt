@@ -1,0 +1,37 @@
+package main
+
+import "fmt"
+
+func main() {
+	var primeNumber int 
+	var count int 
+	var i int =1
+	var z int
+	var check bool = true 
+
+	for check{ 
+		i++
+		primeNumber=i 
+		if (i % i == 0) && (i % 1 == 0){ 
+			if i == 2 { 
+				count++ 
+			} else { // Continue to check
+				for z = 2; z < i; z++ {
+					if i % z == 0{
+						break
+					} else if z == i-1  { 
+						count++
+						if count == 10001 {
+							check = false
+						}
+					} else {
+						continue
+					}
+				}
+			}
+		}
+	}
+	fmt.Print("The 10001st prime number is: ", primeNumber)
+
+
+}
